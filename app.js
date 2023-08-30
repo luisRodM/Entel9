@@ -31,7 +31,7 @@ function requestPermission() {
             console.log('Message received. ', payload);
             // ...
           });
-        Add the public key generated from the console here.
+        // Add the public key generated from the console here.
         getToken(messaging, { vapidKey: "BEzi5EPJto7ZIQHVyMWUsUsLgeGgZKWwzlI5KxJKEkeorBSBQkru0NmaqAMXXaQWifIMxp_pM-9ALtTI8VBA8qY" })
           .then((currentToken) => {
             if (currentToken) {
