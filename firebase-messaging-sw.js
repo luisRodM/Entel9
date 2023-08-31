@@ -3,13 +3,14 @@ importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compa
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDhkcsGl6ELkMaonR4pZtoD20A6YEx1Qo0",
-    authDomain: "entel8-ff820.firebaseapp.com",
-    projectId: "entel8-ff820",
-    storageBucket: "entel8-ff820.appspot.com",
-    messagingSenderId: "398001272297",
-    appId: "1:398001272297:web:8c487ed9554bfe7d59c778"
-  };
+  apiKey: "AIzaSyBwp8yHYGUCOa7ciOU5C5xrWHt5lFEQYLo",
+  authDomain: "entel9-a5043.firebaseapp.com",
+  projectId: "entel9-a5043",
+  storageBucket: "entel9-a5043.appspot.com",
+  messagingSenderId: "755410623132",
+  appId: "1:755410623132:web:65401d9ac823fbebd1ab59",
+  measurementId: "G-71PBY3PBYH"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
