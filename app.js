@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-messaging.js";
+import { saveToken, onGetTokens, getTokens } from "./firebase.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -9,24 +10,22 @@ const firebaseConfig = {
     storageBucket: "entel9-a5043.appspot.com",
     messagingSenderId: "755410623132",
     appId: "1:755410623132:web:65401d9ac823fbebd1ab59",
-    measurementId: "G-71PBY3PBYH"
 };
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-// // Initialize FCM
-// const messaging = getMessaging(app);
+// Initialize FCM
+const messaging = getMessaging(app);
 
-
+let arrayTokens = []
+let arrayTokensUnic = []
 
 function requestPermission() {
     console.log('Requesting permission...');
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
         console.log('Notification permission granted.');
-        const app = initializeApp(firebaseConfig);
-        const messaging = getMessaging(app);
         // onMessage(messaging, (payload) => {
         //     console.log('Message received. ', payload);
         //     // ...
@@ -36,6 +35,7 @@ function requestPermission() {
           .then((currentToken) => {
             if (currentToken) {
               console.log('currentToken: ', currentToken)
+              saveToken(currentToken)
             } else {
               // Show permission request UI
               console.log('No registration token available. Request permission to generate one.');
